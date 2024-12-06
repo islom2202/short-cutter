@@ -15,6 +15,6 @@ ol{
 ol li{
   width: fit-content;
 }
-ol li p{
-  margin-left: 10px;
+ol li p, h4, p{
+  padding: 5px 10px;
 }
