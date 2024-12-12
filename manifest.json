@@ -6,7 +6,10 @@
   "description": "making shortcuts for my dear brother shahriyor",
   "action": {
     "default_icon": {
-      "16": "icon.png"
+      "16": "icon-operator.png",
+      "32": "icon-operator.png",
+      "48": "icon-operator.png",
+      "128": "icon-operator.png"
     },
     "default_title": "set hotkeys to paste",
     "default_popup": "popup.html"
@@ -14,8 +17,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["content.css"],
-      "js": ["content.js"]
+      "css": ["content/content.css"],
+      "js": ["content/content.mjs"]
     }
   ],
   "background": {

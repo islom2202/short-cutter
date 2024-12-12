@@ -47,3 +47,6 @@ chrome.storage.local.set({ dataTj: JSON.stringify(dataTj) }, () => {
 chrome.storage.local.set({ dataRu: JSON.stringify(dataRu) }, () => {
   console.log("DataRu saved successfully!")
 })
+
+// copy-paste function
+
