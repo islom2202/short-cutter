@@ -15,6 +15,13 @@ ol{
 ol li{
   width: fit-content;
 }
-ol li p, h4, p{
+ol li p, i, p{
   padding: 5px 10px;
+}
+i{
+  font-size: 15px;
+}
+i mark{
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: 700;
 }

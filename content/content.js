@@ -1,5 +1,6 @@
 // import utils
-import copyPaste from "./utils/copypaste";
+// import copyPaste from "./utils/copypaste.mjs";
+
 
 // fetch data from local storage (background.js)
 let dataTj;
@@ -27,25 +28,28 @@ document.addEventListener("keydown", e => {
   })
 })
 
-// async function copyPaste(text) {
-//   try {
-//     await navigator.clipboard.writeText(text)
-//     let read = await navigator.clipboard.readText()
-//     let activeElement = document.activeElement;
-//     let editableTags = ["INPUT", "TEXTAREA"]
-//     if (editableTags.includes(activeElement.tagName)) {
-//       activeElement.value = read;
-//     }else if(activeElement.tagName === "P" || activeElement.isContentEditable){
-//       activeElement.innerText = read;
-//     }
-//   } catch (error) {
-//     console.error("Error copying")
-//   }
-// }
-
-document.onkeydown = async (e) => {
+async function copyPaste(text) {
   try {
-    if (e.altKey && e.key === "s") {
+    await navigator.clipboard.writeText(text)
+    let read = await navigator.clipboard.readText()
+    let activeElement = document.activeElement;
+    let editableTags = ["INPUT", "TEXTAREA"]
+    if (editableTags.includes(activeElement.tagName)) {
+      activeElement.value = read;
+    }else if(activeElement.tagName === "P" || activeElement.isContentEditable){
+      activeElement.innerText = read;
+    }
+  } catch (error) {
+    console.error("Error copying")
+  }
+}
+
+
+// fill tags for app activation
+document.onkeydown = async (e) => {
+  if (e.altKey && e.key === "s") {
+  e.preventDefault()
+  try {
       // initialize function
       async function performAction(element, action) {
         element.click()
@@ -85,8 +89,9 @@ document.onkeydown = async (e) => {
       )
       await performAction(subtopic, "click")
     }
-  } catch (error) {
+  catch (error) {
     console.error('Something went wrong');
   }
+  }
 }
-    
+// fill tags for online request for credit
