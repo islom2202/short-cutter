@@ -47,12 +47,13 @@ async function copyPaste(text) {
 
 // alt hotkey functions
 document.onkeydown = async (e) => {
-  e.preventDefault()
   // tags filling functions
   if (e.altKey && e.key === "s") {
+    e.preventDefault()
     appActivation()
   }
   if (e.altKey && e.key === "o") {
+    e.preventDefault()
     onlineCredit()
   }
   // navigation inside jivo
