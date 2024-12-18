@@ -57,18 +57,10 @@ document.onkeydown = async (e) => {
     onlineCredit()
   }
   // navigation inside jivo
-  if(e.altKey && e.key === "ArrowLeft") {
-    document.querySelector('[aria-label="Входящие"]').click();
-  }
-  if(e.altKey && e.key === "ArrowUp"){
-    document.querySelector('[aria-label="Мои"]').click();
-  }
-  if (e.altKey && e.key === "ArrowRight") {
-    document.querySelector('[aria-label="Все"]').click()
-  }
-  if (e.altKey && e.key === "ArrowDown") {
-    document.querySelector('[class="listItem"]').click()
-  }
+  e.key === "ArrowLeft" && document.querySelector('[aria-label="Входящие"]')?.click();
+  e.key === "ArrowUp" && document.querySelector('[aria-label="Мои"]')?.click();
+  e.key === "ArrowRight" && document.querySelector('[aria-label="Все"]')?.click()
+  e.key === "ArrowDown" && document.querySelector('[class="listItem"]')?.click()
 }
 
 
